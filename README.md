@@ -1,7 +1,9 @@
 Yeast
 =====
 Date de rendu projet : 7 Janvier 2015
+
 Mot-clés : Technique (Centrée/Centrée réduire), ACP, ACH, K-Means
+
 http://archive.ics.uci.edu/ml/datasets/Yeast
 
 ----------
