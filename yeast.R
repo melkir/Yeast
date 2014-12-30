@@ -15,7 +15,7 @@ plot(pca.yeast, choix="var")
 # Agglomerative Nesting (Hierarchical Clustering)
 cah.yeast=agnes(yeast, method="ward", stand=TRUE)
 
-classes = cutree(cah.yeast, 2)
+classes = cutree(cah.yeast, 10)
 yeast.classes=cbind.data.frame(yeast, as.factor(classes))
 res.pca = PCA(yeast.classes[,2:11], quali.sup= c(1,10,11), graph=FALSE)
 plot(res.pca, choix="ind", habillage=10)
