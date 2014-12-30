@@ -11,5 +11,7 @@ pca.yeast=PCA(yeast[,seq(2,ncol(yeast))], quali.sup=c(9), quanti.sup=c(5,6))
 par(mfrow=c(1,2))
 plot(pca.yeast, choix="ind")
 plot(pca.yeast, choix="var")
-# Classification Hiérarchique sur Composantes principales.
+# Agglomerative Nesting (Hierarchical Clustering)
+cah.yeast=agnes(yeast, method="ward", stand=TRUE)
+# Classification Hiérarchique sur Composantes principales
 #HCPC(pca.yeast)
