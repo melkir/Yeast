@@ -10,10 +10,10 @@ colnames(yeast) <- c("Sequence Name", "mcg", "gvh", "alm", "mit", "erl", "pox", 
 # Application d'une PCA
 pca.yeast=PCA(yeast[,seq(2,ncol(yeast))], quali.sup=c(9), quanti.sup=c(5,6), graph=FALSE)
 par(mfrow=c(1,2))
+par(oma=c(0,0,2,0))
 plot(pca.yeast, choix="ind", habillage=9)
 plot(pca.yeast, choix="var")
 title("PCA_Référence", outer=TRUE)
-
 
 # Agglomerative Nesting (Hierarchical Clustering)
 cah.yeast=agnes(yeast, method="ward", stand=TRUE)
@@ -23,6 +23,7 @@ pca.res = PCA(yeast.classes[,2:11], quali.sup= c(5,6,9,10), graph=FALSE)
 # Graph
 dev.new()
 par(mfrow=c(1,1))
+par(oma=c(0,0,2,0))
 plot(pca.res, choix="ind", habillage=10)
 title ("CAH", outer=TRUE)
 
@@ -35,5 +36,6 @@ kmeans.yeast=kmeans(dnorm, 4)
 yeast.classes=cbind.data.frame(yeast, as.factor(kmeans.yeast$cluster))
 pca.res = PCA(yeast.classes[,2:11], quali.sup= c(5,6,9,10), graph=FALSE)
 dev.new()
+par(oma=c(0,0,2,0))
 plot(pca.res, choix="ind", habillage=10)
 title ("K-Means", outer=TRUE)
